@@ -8,8 +8,8 @@ type Config struct {
 
 func CreateConfig() *Config {
 	return &Config{
-		HeaderName:            "",
+		HeaderName:            "X-Api-Key",
 		Keys:                  make([]string, 0),
-		RemoveHeaderOnSuccess: true,
+		RemoveHeaderOnSuccess: false,
 	}
 }

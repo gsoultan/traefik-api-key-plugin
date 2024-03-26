@@ -46,6 +46,7 @@ func (a *APIKeyAuth) RemoveHeaderIfAllowed(r *http.Request) {
 }
 
 func New(ctx context.Context, next http.Handler, config *Config, name string) (http.Handler, error) {
+	fmt.Printf("Creating plugin: %s instance: %+v, ctx: %+v\n", name, *config, ctx)
 	if len(config.Keys) == 0 {
 		return nil, fmt.Errorf("please provide keys for api")
 	}
